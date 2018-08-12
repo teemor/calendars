@@ -1,0 +1,19 @@
+.log-list {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+}
+.log-item {
+  margin: 10rpx;
+}
+.fl{float: left}
+.fr{float: right;}
+.cl{clear: both;}
+.t_c{text-align: center}
+.title_contain{width: 100%}
+.title_box{height:50px;line-height: 50px;display:flex;justify-content:center}
+.gird{justify-content: center;align-items: center;display: flex;flex-direction: row;width:105rpx;}
+.dayitems{height:85rpx;}
+.bottom{
+  position:absolute;bottom:40rpx
+}

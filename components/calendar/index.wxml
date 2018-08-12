@@ -1,0 +1,6 @@
+<view>
+    <view wx:for="{{monthName}}" wx:key="{{item}}">{{item}}</view>
+    <view wx:for="{{dayName}}" wx:key="{{item}}">{{item}}</view>
+    {{date}}
+    <view wx:for="{{dates}}" wx:key="{{item}}">{{item}}</view>
+</view>

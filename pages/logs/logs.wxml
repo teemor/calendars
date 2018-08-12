@@ -1,0 +1,44 @@
+<view>
+  <view class="cl title_contain">
+    <view class="title_box">
+      <view bindtap="handleYear" class="fl" data-handle="prev">
+        <gicon type="l_shuming" />
+      </view>
+      <view bindtap="handleMonth" class="fl" data-handle="prev">
+        <gicon type="l_j" />
+      </view>
+      <view class="fl">{{thisyear}}年{{thismonth}}月</view>
+      <view bindtap="handleMonth" class="fl" data-handle="next">
+        <gicon type="r_j" />
+      </view>
+      <view bindtap="handleYear" class="fl" data-handle="next">
+        <gicon type="r_shuming" />
+      </view>
+    </view>
+  </view>
+  <view class="cl">
+    <view wx:for="{{dayName}}" wx:key="{{item}}" style="width:100%">
+      <view class="fl t_c gird ">{{item}}</view>
+    </view>
+  </view>
+  <view wx:for="{{startArr}}" wx:key="{{item}}">
+    <view class="fl t_c gird dayitems" style="color:#E8E9E9">{{item}}</view>
+  </view>
+  <view wx:for="{{day}}" wx:key="{{item}}" style="width:100%">
+    <view class="fl t_c  " style="height:155rpx">
+      <view class="cl gird dayitems">{{item.day}}</view>
+      <view class="cl" style="height:70rpx;overflow:hidden">
+        <view wx:if="{{item.isremark}}" wx:key="{{item}}" style="width:100%;height:10rpx;font-size:12rpx">
+          <view wx:for="{{item.isremark}}" wx:key="{{item}}">{{item}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:for="{{nextMonthDay}}" wx:key="{{item}}">
+    <view class="fl t_c gird dayitems" style="color:#E8E9E9">{{item}}</view>
+  </view>
+  <view class="bottom">
+    <view bindtap="goToday" class="fl">返回今天</view>
+    <view bindtap="addMark" class="fl">新建备忘</view>
+  </view>
+</view>
