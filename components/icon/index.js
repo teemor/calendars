@@ -1,6 +1,8 @@
 Component({
   properties: {
-    type:String
+    type:String,
+    color:String,
+    size:String
   },
   data: {
 

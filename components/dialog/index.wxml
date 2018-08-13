@@ -1,0 +1,11 @@
+<manager show="{{show}}" type="center">
+  <view class="dialog-container">
+    <view class="fr">
+      <gicon type='guanbi' color='gray' catchtap="clickMask"/>
+    </view>
+    <!-- 类型或者图片的容器 start -->
+    <view class="dialog-container--box">
+      <slot></slot>
+    </view>
+  </view>
+</manager>

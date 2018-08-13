@@ -1,4 +1,7 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "manager": "../manager/index",
+    "icon":"../icon/index"
+  }
 }

@@ -1,0 +1,23 @@
+
+.dialog-container {
+  z-index: 444;
+  width: 60vw;
+  font-size: 16px;
+  overflow: hidden;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  padding: 30rpx 30rpx 60rpx 30rpx;
+}
+.dialog-container--box{
+  margin-right: 00rpx;
+}
+.dialog-container--box button{
+  width:100%;
+  background:#12AB8D;
+  color: #fff;
+}
+.fl{float: left}
+.fr{float: right;}
+.cl{clear: both;}
+.t_c{text-align: center}

@@ -15,5 +15,12 @@
 .gird{justify-content: center;align-items: center;display: flex;flex-direction: row;width:105rpx;}
 .dayitems{height:85rpx;}
 .bottom{
-  position:absolute;bottom:40rpx
+ z-index:10;position: absolute;bottom:0;height:60rpx;width:100%;text-align: center;justify-content: center;align-items: center;display: flex;flex-direction: row;border-top: 1px solid #28A588 
 }
+.go_today{font-size: 30rpx;color: red;margin-right: 20rpx;height:60rpx;line-height: 60rpx;}
+.day-choosed{
+  width:50rpx;height:50rpx;background:red;text-align: center;line-height: 50rpx;border-radius: 100rpx;color:#fff
+}
+.add_mark{position:absolute;z-index: 555;bottom: 0;}
+.add_mark-btn{position:absolute;bottom:0;height:60rpx;line-height:60rpx;background:#28A588;color:#fff}
+.contain_center{width:100%;text-align:center;}

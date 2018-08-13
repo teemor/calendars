@@ -2,6 +2,7 @@
   "navigationBarTitleText": "查看启动日志",
   "usingComponents": {
     "calendar": "../../components/calendar/index",
-    "gicon":"../../components/icon/index"
+    "gicon":"../../components/icon/index",
+    "manager":"../../components/manager/index"
   }
 }
