@@ -4,19 +4,19 @@ const util = require('../../utils/util.js')
 Page({
   data: {
     dayName: ['日', '一', '二', '三', '四', '五', '六'],
-    model: [
-      { year: 2018, month: 8, day: 1, isremark: ["今天去拔智齿", "今天去吃海鲜", "吃完海鲜去看电影", "看完电影旅行", "旅行之后去躺着", "呵呵呵呵"] },
-      { year: 2018, month: 8, day: 12, isremark: ["今天去拔智齿"] },
-    ],
-    addMark:false
+    addMark: false,
+    model: [] 
   },
   onLoad: function () {
     this.setData({
       date: util.formateDate(new Date()),
     })
     this.goToday()
-    this.getAllDate()
-    console.log(this.data.addMark)
+  },
+  oneday:function(){
+    wx.navigateTo({
+      url: '../../pages/index/index'
+    })
   },
   getThisMonthDays(year, month) {
     return new Date(year, month, 0).getDate();
@@ -44,9 +44,11 @@ Page({
     let day = [];
     // 本月
     for (let i = 1; i <= monthDay; i++) {
-      day.push({ day: i,month:this.data.thismonth,year:this.data.thisyear })
+      day.push({ day: i, month: this.data.thismonth, year: this.data.thisyear })
     }
-    this.mergeArr(day, this.data.model)
+    util.requestList().then(res => {
+      this.mergeArr(day, res)
+    })
     // 后一个月的空位
     this.setData({
       startArr: prevMonthDay,
@@ -84,7 +86,8 @@ Page({
     }
   },
   // 初始化
-  goToday() {
+  goToday(res) {
+    let { data = res } = []
     let date = new Date();
     let thisyear = date.getFullYear()
     let thismonth = date.getMonth() + 1
@@ -96,13 +99,13 @@ Page({
       chooseDay: today
     })
     this.getAllDate()
+   
   },
   // 数组合并去重方法
   mergeArr(arr1, arr2) {
-    let daya = {}
     for (let i = 0; i < arr2.length; i++) {
       for (let j = 0; j < arr1.length; j++) {
-        if (arr1[j].day === arr2[i].day&&arr1[j].year===arr2[i].year&&arr1[j].month===arr2[i].month) {
+        if (arr1[j].day === arr2[i].day && arr1[j].year === arr2[i].year && arr1[j].month === arr2[i].month) {
           arr1[j].isremark = arr2[i].isremark
         }
       }
@@ -118,10 +121,17 @@ Page({
     })
   },
   // 添加备忘
-  addMark(){
+  addMark() {
     this.setData({
-      addMark:!this.data.addMark
+      addMark: !this.data.addMark
     })
-    console.log(this.data.addMark)
-  }
+  },
+  formSubmit(e) {
+    // wx.request({
+    //   url: 'http://localhost:3000/posts',
+    //   data: e,
+    //   method: 'post'
+    // })
+  },
+
 })
